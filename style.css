@@ -169,3 +169,62 @@ body.dark-mode {
 .dark-mode .equal:hover {
     background-color: #43a047;
 }
+
+/* History */
+.history {
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 250px;
+}
+
+.history h3 {
+    margin-top: 0;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#history-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#clear-history {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#clear-history:hover {
+    background-color: #d32f2f;
+}
+
+.dark-mode .history {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-mode #history-list li {
+    border-bottom-color: #444;
+}
+
+.dark-mode #clear-history {
+    background-color: #f44336;
+}
+
+.dark-mode #clear-history:hover {
+    background-color: #d32f2f;
+}
