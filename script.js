@@ -1,21 +1,36 @@
+const resultInput = document.getElementById('result');
+
 function appendValue(value) {
-    document.getElementById('result').value += value;
+    resultInput.value += value;
 }
 
 function clearResult() {
-    document.getElementById('result').value = '';
+    resultInput.value = '';
 }
 
 function deleteLast() {
-    let result = document.getElementById('result').value;
-    document.getElementById('result').value = result.slice(0, -1);
+    resultInput.value = resultInput.value.slice(0, -1);
 }
 
 function calculateResult() {
-    let result = document.getElementById('result').value;
     try {
-        document.getElementById('result').value = eval(result);
+        // Replace percentage symbol with '/100'
+        let expression = resultInput.value.replace(/%/g, '/100');
+        resultInput.value = eval(expression);
     } catch (error) {
-        document.getElementById('result').value = 'Error';
+        resultInput.value = 'Error';
     }
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (/[0-9]|\.|\/|\*|-|\+/.test(key)) {
+        appendValue(key);
+    } else if (key === 'Enter') {
+        calculateResult();
+    } else if (key === 'Backspace') {
+        deleteLast();
+    } else if (key.toLowerCase() === 'c') {
+        clearResult();
+    }
+});
