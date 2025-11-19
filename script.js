@@ -1,4 +1,12 @@
 const resultInput = document.getElementById('result');
+const calculator = document.querySelector('.calculator');
+const body = document.querySelector('body');
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', () => {
+    calculator.classList.toggle('dark-mode');
+    body.classList.toggle('dark-mode');
+});
 
 function appendValue(value) {
     resultInput.value += value;
